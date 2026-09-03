@@ -3,6 +3,7 @@ Or_Before/
 
 # Installed dependencies are recreated with npm ci
 node_modules/
+.runtime/
 
 # Local browser/testing artifacts
 .playwright-cli/

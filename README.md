@@ -2,19 +2,49 @@
 
 This is a locally hosted birthday website with an Edit Mode for changing layouts, colors, sections, notes, photos, videos, and songs.
 
+## One-click setup — recommended
+
+The launchers automatically detect the computer type, obtain a private compatible Node.js runtime if one is not already installed, download the project packages, start the local server, and open the website in the default browser. Administrator access is not required.
+
+An internet connection is required during the first run. The first setup may take a few minutes; later starts are much faster.
+
+### Windows
+
+1. Download the repository as a ZIP and extract it. Do not run the launcher while it is still inside the ZIP preview.
+2. Open the extracted `Or_Birthday2` folder.
+3. Double-click **`Start-Or-Birthday-Windows.bat`**.
+4. If Windows asks whether the script may run, allow it.
+5. Keep the opened window running while using the website. The browser opens automatically.
+
+### macOS
+
+1. Download the repository as a ZIP and extract it.
+2. Open the extracted `Or_Birthday2` folder.
+3. Double-click **`Start-Or-Birthday-macOS.command`**.
+4. If macOS blocks the first launch, Control-click the file, choose **Open**, and then confirm **Open**. This is normally required only once for downloaded scripts.
+5. Keep the Terminal window running while using the website. The browser opens automatically.
+
+To stop the website, close its launcher window or press **Ctrl+C** on Windows / **Control+C** on macOS. If Windows asks `Terminate batch job (Y/N)?`, type **Y** and press Enter.
+
+The automatic setup stores its private runtime in `.runtime` and its packages in `node_modules`, both inside the project folder. These can be removed and downloaded again without affecting photos, songs, or saved website settings.
+
 ## Important: do not open `index.html` directly
 
-Run the included Node.js server and open the site through `http://localhost:3000`. Double-clicking `index.html` uses the browser's `file://` mode, where loading, uploading, deleting, and restoring media may not work correctly.
+Use the appropriate launcher above. Double-clicking `index.html` uses the browser's `file://` mode, where loading, uploading, deleting, and restoring media may not work correctly.
 
-## Requirements
+## Manual setup — optional
+
+The following instructions are only needed if you prefer to install and run Node.js yourself instead of using the automatic launcher.
+
+### Requirements
 
 - [Node.js](https://nodejs.org/) **24 LTS** (recommended). Node.js 22.12 or later within the 22.x LTS line is also supported.
 - A current version of Chrome, Edge, Firefox, or Safari
 - An internet connection during the first installation
 
-You only need to install Node.js once.
+You only need to install Node.js once when using the manual setup.
 
-## Windows setup
+### Windows manual setup
 
 1. Download and install the LTS version of Node.js from [nodejs.org](https://nodejs.org/). Keep the default installer options.
 2. Close and reopen PowerShell or Windows Terminal after the installation.
@@ -49,7 +79,7 @@ You only need to install Node.js once.
 
 Keep the terminal window open while using the site. To stop the server, return to the terminal and press **Ctrl+C**.
 
-## macOS setup
+### macOS manual setup
 
 1. Download and install the LTS macOS installer from [nodejs.org](https://nodejs.org/). If you already use Homebrew, `brew install node` is also suitable.
 2. Close and reopen Terminal after the installation.
@@ -85,13 +115,15 @@ Keep Terminal open while using the site. To stop the server, return to Terminal 
 
 ## Starting it again later
 
-After the first setup, open a terminal in the project folder and run:
+Use the same Windows or macOS launcher each time. It skips downloads when the correct runtime and packages are already present.
+
+For a manual start, open a terminal in the project folder and run:
 
 ```text
 node server.js
 ```
 
-Then visit [http://localhost:3000](http://localhost:3000). You do not need to run `npm ci` every time; run it again only after `package.json` or `package-lock.json` changes.
+Then visit [http://localhost:3000](http://localhost:3000). You do not need to run `npm ci` every time; run it again only after `package.json` or `package-lock.json` changes. The automatic launcher performs this check for you.
 
 ## Transferring your customized version to another computer
 
@@ -136,6 +168,15 @@ If the error says the lock file is out of sync with `package.json`, use:
 ```text
 npm install
 ```
+
+### The automatic launcher cannot download Node.js or the packages
+
+- Confirm that the computer is connected to the internet and try again.
+- Temporarily disconnect a VPN or restrictive proxy if it blocks `nodejs.org` or `registry.npmjs.org`.
+- Keep the project in a writable location such as Documents or the Desktop, not inside a read-only ZIP preview.
+- The launcher verifies the official Node.js download with its SHA-256 checksum before using it. A verification failure is intentionally treated as an error; download the repository again or retry on a trusted connection.
+
+The automatic launcher does not require administrator access and does not change the computer-wide Node.js installation.
 
 ### Port 3000 is already in use
 
