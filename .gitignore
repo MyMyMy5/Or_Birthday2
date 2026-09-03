@@ -1,0 +1,23 @@
+# Previous reference version (intentionally kept only on this computer)
+Or_Before/
+
+# Installed dependencies are recreated with npm ci
+node_modules/
+
+# Local browser/testing artifacts
+.playwright-cli/
+.playwright-mcp/
+
+# Editor and operating-system files
+.vscode/
+.DS_Store
+Thumbs.db
+
+# Runtime trash and logs
+Deleted/
+npm-debug.log*
+
+# Local environment configuration
+.env
+.env.*
+!.env.example

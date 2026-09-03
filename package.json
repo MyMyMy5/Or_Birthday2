@@ -1,0 +1,31 @@
+{
+  "name": "or_birthday",
+  "version": "1.0.0",
+  "main": "media-manager.js",
+  "scripts": {
+    "test": "vitest --run"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/MyMyMy5/Or_Birthday2.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/MyMyMy5/Or_Birthday2/issues"
+  },
+  "homepage": "https://github.com/MyMyMy5/Or_Birthday2#readme",
+  "description": "",
+  "devDependencies": {
+    "@vitest/browser": "^4.1.5",
+    "fast-check": "^4.7.0",
+    "jsdom": "^29.1.1",
+    "supertest": "^7.2.2",
+    "vitest": "^4.1.5"
+  },
+  "dependencies": {
+    "express": "^5.2.1",
+    "multer": "^2.1.1"
+  }
+}

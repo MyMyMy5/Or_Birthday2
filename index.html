@@ -56,6 +56,21 @@
         <header class="memories-header">
             <h1 class="memories-title">Memories</h1>
             <p class="memories-subtitle">A collection of our beautiful moments together</p>
+            <div class="header-actions">
+                <button class="trash-btn" id="trash-btn" aria-label="View deleted items">🗑️ Trash</button>
+                <label class="envelope-toggle" id="envelope-toggle-label">
+                    <input type="checkbox" id="envelope-toggle" checked>
+                    <span class="envelope-toggle-slider"></span>
+                    <span class="envelope-toggle-text">💌 Envelope</span>
+                </label>
+                <label class="dev-mode-toggle" id="dev-mode-toggle-label">
+                    <input type="checkbox" id="dev-mode-toggle">
+                    <span class="envelope-toggle-slider"></span>
+                    <span class="envelope-toggle-text">🛠️ Edit Mode</span>
+                </label>
+                <button class="export-settings-btn" id="export-settings-btn" aria-label="Export Settings" onclick="exportSettings()">📤 Export Settings</button>
+                <button class="import-settings-btn" id="import-settings-btn" aria-label="Import Settings" onclick="triggerImportSettings()">📥 Import Settings</button>
+            </div>
         </header>
 
         <div class="memories-content">
@@ -119,14 +134,18 @@
         <button class="back-btn" id="back-btn">&larr; Back to Letter</button>
     </section>
 
-    <!-- Image modal -->
-    <div id="image-modal" class="image-modal" aria-hidden="true">
-        <div class="image-modal-content">
-            <button class="image-modal-close" aria-label="Close image">&times;</button>
-            <img id="image-modal-img" alt="Expanded view">
+    <!-- Lightbox overlay -->
+    <div id="lightbox" class="lightbox-overlay" aria-hidden="true">
+        <div class="lightbox-content">
+            <button class="lightbox-close" aria-label="Close lightbox">&times;</button>
+            <button class="lightbox-arrow lightbox-prev" aria-label="Previous photo">&#10094;</button>
+            <img id="lightbox-img" class="lightbox-photo" alt="">
+            <button class="lightbox-arrow lightbox-next" aria-label="Next photo">&#10095;</button>
+            <div class="lightbox-counter" aria-live="polite">1 / 6</div>
         </div>
     </div>
 
+    <script src="media-manager.js"></script>
     <script src="script.js"></script>
 </body>
 </html>
