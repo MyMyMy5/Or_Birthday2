@@ -8,6 +8,7 @@ node_modules/
 # Local browser/testing artifacts
 .playwright-cli/
 .playwright-mcp/
+.kiro/
 
 # Editor and operating-system files
 .vscode/
